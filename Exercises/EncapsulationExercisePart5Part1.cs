@@ -10,12 +10,17 @@ namespace ObjectOrientedProgrammingDay2.Exercises
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get; set; }
         public Person(string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;
-            FullName = firstName + " " + lastName;
+        }
+        public string FullName 
+        { 
+            get 
+            { 
+                return $"{FirstName} {LastName}"; 
+            } 
         }
     }
     internal class EncapsulationExercisePart5Part1

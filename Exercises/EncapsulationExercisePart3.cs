@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,13 +12,16 @@ namespace ObjectOrientedProgrammingDay2.Exercises
         public static void Deposit(Account account, double depositAmount)
         {
             account.Balance += depositAmount;
-            Console.WriteLine($"Din konto er blivet opdateret. Der står nu kr. {account.Balance}");
-            Console.ReadKey();
+            WriteOut(account.Balance);
         }
         public static void Withdraw(Account account, double WithdrawAmount)
         {
             account.Balance -= WithdrawAmount;
-            Console.WriteLine($"Din konto er blivet opdateret. Der står nu kr. {account.Balance}");
+            WriteOut(account.Balance);
+        }
+        public static void WriteOut(double balance)
+        {
+            Console.WriteLine($"Din konto er blivet opdateret. Der står nu kr. {Math.Round(balance, 2)}");
             Console.ReadKey();
         }
     }
